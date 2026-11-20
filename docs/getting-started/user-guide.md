@@ -26,7 +26,7 @@ cd SPR_Client_27
 | --- | --- |
 | `start-windows.bat check` | 检查 MSYS2。看到 `MSYS2 found` 再继续。 |
 | `start-windows.bat update` | 更新 MSYS2。遇到 `[Y/n]` 输入 `Y` 回车。 |
-| `start-windows.bat setup` | 下载编译器、Qt 等依赖。遇到 `[Y/n]` 输入 `Y` 回车。看到 `Build dependencies ready` 再继续。 |
+| `start-windows.bat setup` | 下载 UCRT64 版编译器、Qt 等依赖。遇到 `[Y/n]` 输入 `Y` 回车。看到 `Build dependencies ready` 再继续。 |
 | `start-windows.bat build` | 编译并打开客户端。看到客户端界面就完成了。 |
 
 - **提示 `MSYS2 not found`** — 先安装 MSYS2。装在其他盘时，先执行 `set "MSYS2_ROOT=D:\msys64"`（换成实际路径），再跑 `check`。
