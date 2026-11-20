@@ -15,27 +15,24 @@ cd SPR_Client_27
 
 ## 2. 安装依赖并编译
 
-### Windows x64
+### Windows x64，从 CMD 开始
 
-以下是使用 **MSYS2 MINGW64** 的依赖安装方式。项目已验证的 Windows 环境为 MinGW x64 与 Qt 6.8.3，MSYS2 软件包版本随更新变化。安装后在开始菜单打开 **MSYS2 MINGW64**。如果更新要求关闭终端，重开同一个 MINGW64 终端并再次执行 `pacman -Syu`。
+如果你已经拿到了战队完整运行包，按[运行包说明](../../scripts/portable/README.md)双击启动。以下步骤用于从 GitHub 下载的源码，第一次做完后，日常可以直接双击源码里的启动脚本。
 
-1. 安装并更新 [MSYS2](https://www.msys2.org/)。
-2. 在 MINGW64 终端安装编译器、Qt 和协议/视频依赖。
+1. **下载源码。** 在 GitHub 点 **Code → Download ZIP**，解压。打开能看到 `CMakeLists.txt` 那一级文件夹。
+2. **安装 MSYS2。** 从 [MSYS2 官网](https://www.msys2.org/)下载安装器，安装路径保持默认的 `C:\msys64`。安装器结束时如果另开了终端，可以关掉。后面的命令都在普通 CMD 执行。
+3. **在源码目录打开 CMD。** 在资源管理器点地址栏，输入 `cmd` 并回车。输入 `dir CMakeLists.txt`，能列出这个文件就说明目录正确。如果你已经打开了 CMD，也可以用 `cd /d "C:\dev\SPR_Client_27"`，把引号内的路径换成自己实际的解压目录。
+4. **依次粘贴以下命令，每条跑完再执行下一条。** 第一条更新 MSYS2，第二条安装编译依赖，第三条编译并打开客户端。
 
-   ```bash
-   pacman -Syu
-   pacman -S --needed git mingw-w64-x86_64-{gcc,cmake,ninja,pkgconf,qt6-base,qt6-declarative,qt6-multimedia,qt6-serialport,qt6-svg,abseil-cpp,protobuf,paho.mqtt.c,ffmpeg}
+   ```cmd
+   scripts\portable\windows\start-from-source.bat update
+   scripts\portable\windows\start-from-source.bat setup
+   scripts\portable\windows\start-from-source.bat build
    ```
 
-3. 在同一个终端进入源码目录。例如，解压到 `C:\dev\SPR_Client_27` 时执行 `cd /c/dev/SPR_Client_27`。配置、编译并启动。
+   如果更新提示关闭 MSYS2 进程，按提示结束该次更新，再在 CMD 里重新运行 `update`，直到更新结束后再执行 `setup`。软件包装好后，下次只想打开界面时，双击 [start-from-source.bat](../../scripts/portable/windows/start-from-source.bat) 即可。源码更新后用 `build` 重新编译。脚本生成的程序在 `build/windows/RoboMasterClient2025.exe`。
 
-   ```bash
-   cmake -S . -B build/windows -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON -DCMAKE_PREFIX_PATH=C:/msys64/mingw64 -DPAHO_MQTT_ROOT=C:/msys64/mingw64
-   cmake --build build/windows --parallel 4
-   (cd build/windows && ./RoboMasterClient2025.exe)
-   ```
-
-   MSYS2 装在其他位置时，替换两处 `C:/msys64/mingw64`。使用另一套 MinGW SDK 时，Qt、编译器、Protobuf、Abseil、FFmpeg 与 Paho 的架构和 ABI 需一致，运行时将对应的 DLL 目录加入 `PATH`。第一次建议从构建终端启动，让程序继承依赖目录。
+MSYS2 装在其他位置时，在当前 CMD 先执行 `set "MSYS2_ROOT=D:\msys64"`，把路径换成实际目录，然后在同一窗口执行上述命令。MSYS2 软件包版本随更新变化。项目此前验证的 Windows 编译环境为 MinGW x64 与 Qt 6.8.3。
 
 ### Ubuntu 24.04 图形桌面
 
@@ -107,7 +104,7 @@ cmake --build build/linux --parallel 4
 | 表现 | 检查顺序 |
 | --- | --- |
 | CMake 找不到 Qt、Protobuf 或 Abseil | 检查 SDK 路径与所选编译器；若换过工具链，用新的 `build/` 子目录重新配置。 |
-| Windows 启动时提示缺 DLL 或 Qt platform plugin | 先从安装依赖的 MINGW64 终端启动，核对 Qt 和其他 DLL 是否来自同一套环境。 |
+| Windows 启动时提示缺 DLL 或 Qt platform plugin | 用本节提供的脚本启动，它会为本次运行设置依赖目录。若仍报错，检查 MSYS2 安装路径和 setup 步骤。 |
 | 程序能打开但没有比赛数据 | 先查 CMake 是否启用 MQTT，再核对当前协议档位、Broker 地址、端口和车位。 |
 | 有比赛数据但主图传黑屏 | 先确认视频源已出图，核对发送目的 IP、UDP 端口、客户端防火墙与 FFmpeg 解码支持。 |
 | 主图传正常但工业相机等待 | 检查是否有对应车位的 MQTT `CustomByteBlock` 视频源。 |
