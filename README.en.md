@@ -50,19 +50,9 @@ The video background below is a test frame. The HUD is drawn by the client. [Key
 
 ## Quick start
 
-**Existing Windows runtime kit.** Open `02-运行脚本/Windows/8-启动Windows自定义客户端.bat` from the kit directory. It launches `SPR2027Client.exe`. Use `P` to select the profile and seat. [Portable runtime kit](scripts/portable/README.md)
+Follow the [step-by-step user guide (Chinese)](docs/getting-started/user-guide.md) to download the repository, install dependencies, build on Windows or Ubuntu, preview offline, run a simulated match, and connect to official match services.
 
-**Build from source.** Use CMake 3.21+, a C++17 compiler, Ninja, Qt 6 and Protobuf. The Qt installation needs Multimedia, SerialPort, Svg, Quick, Quick Widgets and Quick Controls 2. Use FFmpeg development libraries for video decoding and Paho MQTT C for match telemetry. Windows MinGW x64 and Ubuntu builds were verified with Qt 6.8.3.
-
-```sh
-git clone https://github.com/SPR-Algorithm/SPR_Client_27.git
-cd SPR_Client_27
-cmake -S . -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
-cmake --build build/release --parallel 4
-ctest --test-dir build/release --output-on-failure
-```
-
-Set `CMAKE_PREFIX_PATH` for SDKs outside the usual search paths. Match the Qt and dependency ABI to the Windows compiler, and make their DLLs and plugins available at runtime. The CMake executable keeps the compatibility name `RoboMasterClient2025` (`.exe` on Windows). [Build guide](docs/rm26-client-dev-guide.md)
+GitHub distributes source code, assets, the simulator, and build tools. The prebuilt executable and double-click launchers are distributed separately as part of the team's runtime kit. See the [runtime kit notes](scripts/portable/README.md) if you already have that package.
 
 ## Integration and verification
 

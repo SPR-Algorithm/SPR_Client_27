@@ -82,25 +82,9 @@
 
 ## 快速开始
 
-### 已有 SPR Windows 运行包
+**从 GitHub 下载后，请按[客户端使用指南](docs/getting-started/user-guide.md)操作。** 指南覆盖依赖安装、Windows 和 Ubuntu 编译、离线预览、模拟比赛及官方赛事接入。
 
-1. 在运行包根目录打开 `02-运行脚本/Windows/8-启动Windows自定义客户端.bat`。脚本启动 `SPR2027Client.exe`。
-2. 按 `P` 选择赛项和车位，用 `Ctrl+T` 切换操作视图。离线也可以预览布局。
-3. 需要收赛场数据时，按照现场拓扑配置本机网络和裁判端。Windows 与 Linux 的交付脚本说明见 [运行包说明](scripts/portable/README.md)。
-
-### 从源码构建
-
-需要 CMake 3.21+、支持 C++17 的编译器、Ninja、Qt 6 和 Protobuf。Qt 需要 Multimedia、SerialPort、Svg、Quick、Quick Widgets、Quick Controls 2 等模块。主图传及工业相机解码需要 FFmpeg 开发库，完整 MQTT 联调需要 Paho MQTT C。Windows 上 Qt 和依赖库须与编译器 ABI 一致。已验证环境为 Windows MinGW x64 与 Ubuntu，均使用 Qt 6.8.3。
-
-```sh
-git clone https://github.com/SPR-Algorithm/SPR_Client_27.git
-cd SPR_Client_27
-cmake -S . -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
-cmake --build build/release --parallel 4
-ctest --test-dir build/release --output-on-failure
-```
-
-依赖装在自定义位置时，用 `CMAKE_PREFIX_PATH` 提供 SDK 前缀。Windows 运行时需要在环境中找到同一套 Qt 插件和依赖 DLL。源码构建的兼容目标名称为 `RoboMasterClient2025`，Windows 可执行文件为 `build/release/RoboMasterClient2025.exe`。仓库包含源码、资源和工具，完整运行包在已交付的本地目录中使用。 [开发指南](docs/rm26-client-dev-guide.md)
+GitHub 提供源码、资源、模拟器和构建工具。战队交付包里的预编译程序和双击启动入口随完整运行包提供。已经拿到完整运行包的队员可以查阅[运行包说明](scripts/portable/README.md)。
 
 ## 联调与验证
 
