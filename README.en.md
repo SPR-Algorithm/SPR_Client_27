@@ -16,7 +16,7 @@ The 2027 implementation references the [communication protocol](https://bbs.robo
 
 ## Quick start
 
-Use CMake 3.21+, a C++17 compiler, Qt 6 and Protobuf. Add FFmpeg development libraries for video and Paho MQTT C for match telemetry. The Windows build was tested with MinGW x64 and Qt 6.8.3.
+Use CMake 3.21+, a C++17 compiler, Qt 6 and Protobuf. Add FFmpeg development libraries for video and Paho MQTT C for match telemetry. The Windows build was tested with MinGW x64 and Qt 6.8.3. Ubuntu CI uses the same Qt version.
 
 ```sh
 cmake -S . -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON

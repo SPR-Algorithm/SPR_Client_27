@@ -99,6 +99,10 @@ jobs:
             fonts-noto-cjk \
             libabsl-dev \
             libasound2t64 \
+            libgl1-mesa-dev \
+            libpulse0 \
+            libxcb-cursor0 \
+            libxkbcommon-x11-0 \
             libavcodec-dev \
             libavformat-dev \
             libavutil-dev \
@@ -107,29 +111,22 @@ jobs:
             libswscale-dev \
             ninja-build \
             pkg-config \
-            protobuf-compiler \
-            qml6-module-qtqml \
-            qml6-module-qtqml-models \
-            qml6-module-qtqml-workerscript \
-            qml6-module-qtquick \
-            qml6-module-qtquick-controls \
-            qml6-module-qtquick-layouts \
-            qml6-module-qtquick-templates \
-            qml6-module-qtquick-window \
-            qt6-base-dev \
-            qt6-declarative-dev \
-            qt6-declarative-dev-tools \
-            qt6-multimedia-dev \
-            qt6-serialport-dev \
-            qt6-svg-dev
+            protobuf-compiler
+
+      - name: 安装 Qt 6.8.3
+        uses: jurplel/install-qt-action@b344308e4483fc892e0d27b3cd1b173ebdd95f06 # v4.5.0
+        with:
+          version: "6.8.3"
+          modules: "qtmultimedia qtserialport"
+          cache: true
 
       - name: 恢复编译缓存
         uses: actions/cache@v6
         with:
           path: ~/.cache/ccache
-          key: rm26-ccache-${{ runner.os }}-${{ runner.arch }}-${{ github.sha }}
+          key: spr-client-27-ccache-${{ runner.os }}-${{ runner.arch }}-${{ github.sha }}
           restore-keys: |
-            rm26-ccache-${{ runner.os }}-${{ runner.arch }}-
+            spr-client-27-ccache-${{ runner.os }}-${{ runner.arch }}-
 
       - name: 准备编译缓存
         run: |

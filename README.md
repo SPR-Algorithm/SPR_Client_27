@@ -23,7 +23,7 @@
 
 手头已有 SPR Windows 运行包时，双击 `02-运行脚本/Windows/8-启动Windows自定义客户端.bat` 即可看离线界面。赛场数据和图传在接入对应赛事链路后显示。
 
-从源码构建需要 CMake 3.21+、支持 C++17 的编译器、Qt 6 和 Protobuf。图传和正式赛场数据分别需要 FFmpeg 开发库及 Paho MQTT C。Windows 上 Qt 与依赖库须与编译器 ABI 一致。本次 Windows 构建使用 MinGW x64 和 Qt 6.8.3。
+从源码构建需要 CMake 3.21+、支持 C++17 的编译器、Qt 6 和 Protobuf。图传和正式赛场数据分别需要 FFmpeg 开发库及 Paho MQTT C。Windows 上 Qt 与依赖库须与编译器 ABI 一致。本次 Windows 构建使用 MinGW x64 和 Qt 6.8.3。Ubuntu CI 同样使用 Qt 6.8.3。
 
 ```sh
 cmake -S . -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
