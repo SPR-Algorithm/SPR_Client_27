@@ -71,3 +71,7 @@
 ## SPR 2027 地图
 
 `resources/images/rmuc2027.*`、`rmul3v3.*` 和 `rmul1v1.*` 依据 RoboMaster 高校赛务发布的 [RMU 2027 场地图纸与可移动道具](https://bbs.robomaster.com/article/1970956) 制作。SPR 调整了俯视角度、材质、照明和显示配色，SVG 小地图按场地结构重绘。地图按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 提供，复用时应标注原作者、出处与改动，并遵守非商业及相同方式共享条款。
+
+## README 运行截图
+
+`docs/images/readme/` 展示 SPR 客户端的指挥屏、操作手 HUD 和全屏战况。截图由 SPR 从 `test_mainwindow_tactical_hotkey_integration.cpp` 的本机测试画面截取。队伍状态、计时和血量由测试填充，主图传截图使用仓库已登记的 `resources/images/tactical_camera_preview_default.png` 作为演示帧。画面内的地图和其余资源继续适用各自许可。地图署名和授权见上一节。
