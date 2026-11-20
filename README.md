@@ -84,6 +84,8 @@
 
 **从 GitHub 下载后，请按[客户端使用指南](docs/getting-started/user-guide.md)操作。** 指南覆盖依赖安装、Windows 和 Ubuntu 编译、离线预览、模拟比赛及官方赛事接入。
 
+Windows 读者可以在源码文件夹的地址栏输入 `cmd`，然后按[Windows 步骤](docs/getting-started/user-guide.md#windows-x64从-cmd-开始)粘贴命令。首次编译完成后，可双击同一脚本启动。
+
 GitHub 提供源码、资源、模拟器和构建工具。战队交付包里的预编译程序和双击启动入口随完整运行包提供。已经拿到完整运行包的队员可以查阅[运行包说明](scripts/portable/README.md)。
 
 ## 联调与验证
