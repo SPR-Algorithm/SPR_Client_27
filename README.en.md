@@ -52,7 +52,7 @@ The video background below is a test frame. The HUD is drawn by the client. [Key
 
 Follow the [step-by-step user guide (Chinese)](docs/getting-started/user-guide.md) to download the repository, install dependencies, build on Windows or Ubuntu, preview offline, run a simulated match, and connect to official match services.
 
-On Windows, open Command Prompt by typing `cmd` in File Explorer’s address bar at the source root. Follow the [Windows steps](docs/getting-started/user-guide.md#windows-x64从-cmd-开始) for one-time setup. After the first successful build, use the same batch file to launch the client.
+On Windows, open Command Prompt by typing `cmd` in File Explorer’s address bar at the source root. Follow the [Windows steps](docs/getting-started/user-guide.md#windows-x64从-cmd-开始) for one-time setup. After the first successful build, double-click `start-windows.bat` in the repository root to launch the client.
 
 GitHub distributes source code, assets, the simulator, and build tools. The prebuilt executable and double-click launchers are distributed separately as part of the team's runtime kit. See the [runtime kit notes](scripts/portable/README.md) if you already have that package.
 

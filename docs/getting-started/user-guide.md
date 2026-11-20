@@ -11,28 +11,27 @@ git clone https://github.com/SPR-Algorithm/SPR_Client_27.git
 cd SPR_Client_27
 ```
 
-仓库包含源码、地图等资源、模拟器及部分启动和打包工具。源码包没有编译好的 Windows 客户端、战队交付目录里的双击启动脚本、官方赛事引擎或 USB 驱动。手上已经有战队完整运行包的队员可以按[运行包说明](../../scripts/portable/README.md)直接运行。
+仓库包含源码、地图等资源、模拟器及部分启动和打包工具。源码包里的 Windows 脚本用于编译和启动自定义客户端。预编译客户端、官方赛事引擎和 USB 驱动需要另行取得。手上已经有战队完整运行包的队员可以按[运行包说明](../../scripts/portable/README.md)直接运行。
 
 ## 2. 安装依赖并编译
 
 ### Windows x64，从 CMD 开始
 
-如果你已经拿到了战队完整运行包，按[运行包说明](../../scripts/portable/README.md)双击启动。以下步骤用于从 GitHub 下载的源码，第一次做完后，日常可以直接双击源码里的启动脚本。
+1. **装 MSYS2** — 从 [MSYS2 官网](https://www.msys2.org/)下载 Windows x64 安装器。保留默认路径 `C:\msys64`。
+2. **打开 CMD** — 打开能看到 `CMakeLists.txt` 的源码文件夹，在资源管理器地址栏输入 `cmd`，回车。
 
-1. **下载源码。** 在 GitHub 点 **Code → Download ZIP**，解压。打开能看到 `CMakeLists.txt` 那一级文件夹。
-2. **安装 MSYS2。** 从 [MSYS2 官网](https://www.msys2.org/)下载安装器，安装路径保持默认的 `C:\msys64`。安装器结束时如果另开了终端，可以关掉。后面的命令都在普通 CMD 执行。
-3. **在源码目录打开 CMD。** 在资源管理器点地址栏，输入 `cmd` 并回车。输入 `dir CMakeLists.txt`，能列出这个文件就说明目录正确。如果你已经打开了 CMD，也可以用 `cd /d "C:\dev\SPR_Client_27"`，把引号内的路径换成自己实际的解压目录。
-4. **依次粘贴以下命令，每条跑完再执行下一条。** 第一条更新 MSYS2，第二条安装编译依赖，第三条编译并打开客户端。
+下面每次**只复制左边的命令**，上一条成功后再跑下一条。
 
-   ```cmd
-   scripts\portable\windows\start-from-source.bat update
-   scripts\portable\windows\start-from-source.bat setup
-   scripts\portable\windows\start-from-source.bat build
-   ```
+| CMD 命令 | 这步干什么 |
+| --- | --- |
+| `start-windows.bat check` | 检查 MSYS2。看到 `MSYS2 found` 再继续。 |
+| `start-windows.bat update` | 更新 MSYS2。遇到 `[Y/n]` 输入 `Y` 回车。 |
+| `start-windows.bat setup` | 下载编译器、Qt 等依赖。遇到 `[Y/n]` 输入 `Y` 回车。看到 `Build dependencies ready` 再继续。 |
+| `start-windows.bat build` | 编译并打开客户端。看到客户端界面就完成了。 |
 
-   如果更新提示关闭 MSYS2 进程，按提示结束该次更新，再在 CMD 里重新运行 `update`，直到更新结束后再执行 `setup`。软件包装好后，下次只想打开界面时，双击 [start-from-source.bat](../../scripts/portable/windows/start-from-source.bat) 即可。源码更新后用 `build` 重新编译。脚本生成的程序在 `build/windows/RoboMasterClient2025.exe`。
-
-MSYS2 装在其他位置时，在当前 CMD 先执行 `set "MSYS2_ROOT=D:\msys64"`，把路径换成实际目录，然后在同一窗口执行上述命令。MSYS2 软件包版本随更新变化。项目此前验证的 Windows 编译环境为 MinGW x64 与 Qt 6.8.3。
+- **提示 `MSYS2 not found`** — 先安装 MSYS2。装在其他盘时，先执行 `set "MSYS2_ROOT=D:\msys64"`（换成实际路径），再跑 `check`。
+- **更新提示要关闭所有 MSYS2 进程** — 输入 `Y` 回车，它会结束这轮更新。回到 CMD 再跑一次 `update`。CMD 如果也关了，就从文件夹地址栏重新打开。更新结束后再跑 `setup`。
+- **以后怎么打开** — 默认安装路径直接双击源码根目录的 [start-windows.bat](../../start-windows.bat)。用自定义安装路径时，从设好 `MSYS2_ROOT` 的 CMD 执行 `start-windows.bat`。改了源码就再跑 `build`。
 
 ### Ubuntu 24.04 图形桌面
 
