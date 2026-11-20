@@ -24,12 +24,13 @@ cd SPR_Client_27
 
 | CMD 命令 | 这步干什么 |
 | --- | --- |
-| `start-windows.bat check` | 检查 MSYS2。看到 `MSYS2 found` 再继续。 |
+| `start-windows.bat check` | 检查 MSYS2。看到 `MSYS2 found` 和 `Using UCRT64` 再继续。 |
 | `start-windows.bat update` | 更新 MSYS2。遇到 `[Y/n]` 输入 `Y` 回车。 |
-| `start-windows.bat setup` | 下载编译器、Qt 等依赖。遇到 `[Y/n]` 输入 `Y` 回车。看到 `Build dependencies ready` 再继续。 |
+| `start-windows.bat setup` | 下载 UCRT64 版编译器、Qt 等依赖。遇到 `[Y/n]` 输入 `Y` 回车。看到 `Build dependencies ready` 再继续。 |
 | `start-windows.bat build` | 编译并打开客户端。看到客户端界面就完成了。 |
 
 - **提示 `MSYS2 not found`** — 先安装 MSYS2。装在其他盘时，先执行 `set "MSYS2_ROOT=D:\msys64"`（换成实际路径），再跑 `check`。
+- **找不到 `mingw-w64-x86_64-qt6-serialport` 等包** — 这是旧脚本。Git 克隆用户先执行 `git pull --ff-only` 更新源码，ZIP 用户重新下载最新版。再从 `check` 开始。
 - **更新提示要关闭所有 MSYS2 进程** — 输入 `Y` 回车，它会结束这轮更新。回到 CMD 再跑一次 `update`。CMD 如果也关了，就从文件夹地址栏重新打开。更新结束后再跑 `setup`。
 - **以后怎么打开** — 默认安装路径直接双击源码根目录的 [start-windows.bat](../../start-windows.bat)。用自定义安装路径时，从设好 `MSYS2_ROOT` 的 CMD 执行 `start-windows.bat`。改了源码就再跑 `build`。
 
