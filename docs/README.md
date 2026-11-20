@@ -12,7 +12,7 @@
 | 你的目标 | 从这里开始 | 下一步 |
 | --- | --- | --- |
 | 我想先看它解决什么问题 | [项目 README](../README.md) | 核心能力、系统图和已知限制 |
-| 我想在本地跑起来 | [快速开始](../README.md#快速开始) | [配置说明](getting-started/configuration.md)与[模拟器说明](../sim/README.md) |
+| 我想在本地跑起来 | [客户端使用指南](getting-started/user-guide.md) | [配置说明](getting-started/configuration.md)与[模拟器说明](../sim/README.md) |
 | 我要操作客户端 | [客户端快捷键](getting-started/keyboard-shortcuts.md) | 视图切换、选车与操作手面板 |
 | 我想读懂代码和架构 | [学习路径](learning-path.md) | 架构、线程、协议和测试专题 |
 | 我想提交一个改动 | [客户端开发指南](rm26-client-dev-guide.md) | [贡献指南](../CONTRIBUTING.md) |

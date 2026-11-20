@@ -66,6 +66,15 @@
         "file_count": 1,
         "sha256": "eb5f13d8e8060639ace9887ad71798a5855f52a5204bcd2cd01c4470f0e53cb9"
       }
+    },
+    {
+      "path": "docs/images/readme",
+      "status": "approved",
+      "evidence": "ASSET_LICENSES.md",
+      "snapshot": {
+        "file_count": 5,
+        "sha256": "aad548ce34d4c0fb2a7552913d88a0727d1354b47c4c9481a6d0ad6f2c766e5d"
+      }
     }
   ]
 }
