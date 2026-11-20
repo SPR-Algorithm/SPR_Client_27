@@ -38,6 +38,7 @@
     "resources.qrc",
     "run_docker.sh",
     "run_test.sh",
+    "start-windows.bat",
     "videoplayer.sh"
   ]
 }
