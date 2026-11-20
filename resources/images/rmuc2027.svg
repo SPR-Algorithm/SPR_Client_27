@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1680" height="900" viewBox="0 0 280 150">
+<defs>
+  <linearGradient id="floor" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#29363f"/><stop offset=".52" stop-color="#232f37"/><stop offset="1" stop-color="#29363f"/>
+  </linearGradient>
+  <linearGradient id="terrain" x1="0" x2="0" y1="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#5e7078"/><stop offset="1" stop-color="#405059"/>
+  </linearGradient>
+
+  <g id="side-red" stroke-linejoin="round">
+    <path d="M1 91h25l8 5v53H1zm30-90h96l-18 15H95L75 42H31zM37 110h27l23-23 17 18-39 44H37z"
+          fill="#161e24" stroke="#17222a" stroke-width="2"/>
+    <path d="M1 91h25l8 5v53H1zm30-90h96l-18 15H95L75 42H31zM37 110h27l23-23 17 18-39 44H37z"
+          fill="url(#terrain)" stroke="#bd6e66" stroke-width=".7"/>
+    <path d="M2 92h24l7 5v52H2zm30-90h92l-15 14H95L75 41H32zM38 111h27l22-22 16 16-38 43H38z"
+          fill="#bd6e66" fill-opacity=".12"/>
+    <path d="M34 4h85M35 38h38l16-21M40 145h24l23-27M5 95h18l7 4v46"
+          fill="none" stroke="#c0c8c5" stroke-opacity=".36" stroke-width=".55"/>
+    <path d="M2 13h27v31H2z" fill="#344049" stroke="#bd6e66" stroke-width=".6"/>
+    <path d="M9 16h13l4 4v17l-4 4H9l-4-4V20z" fill="#bd6e66" fill-opacity=".24" stroke="#bd6e66" stroke-width=".68"/>
+    <path d="M10 22h11m-11 6h11m-11 6h11" stroke="#bd6e66" stroke-width=".42" opacity=".64"/>
+    <path d="M0 65h42v20H0z" fill="#bd6e66" fill-opacity=".16"/>
+    <path d="M7 62l14-8 16 9v23l-15 10-15-10z" fill="#2b353b" stroke="#bd6e66" stroke-width=".86"/>
+    <path d="M16 69l6-3 6 3v12l-6 3-6-3z" fill="#bd6e66" stroke="#20292e" stroke-width="1"/>
+    <circle cx="24.11" cy="75" r="2.4" fill="#eef1e7" opacity=".76"/>
+    <path d="M50 75l5-10h13l6 10-6 10H55z" fill="#46545b" stroke="#bd6e66" stroke-width=".7"/>
+    <path d="M54 75l3-6h9l4 6-4 6h-9z" fill="#2f3c44" stroke="#9daeb0" stroke-width=".52"/>
+    <rect x="5" y="131" width="11" height="12" rx="1" fill="#bd6e66" fill-opacity=".42" stroke="#bd6e66" stroke-width=".65"/>
+    <path d="M7 137h7m-3.5-3.5v7" stroke="#e0e9e7" stroke-width=".7"/>
+    <circle cx="109" cy="113" r="5.6" fill="#29353d" stroke="#bd6e66" stroke-width=".75"/>
+    <path d="M109 109.4l3.6 3.6-3.6 3.6-3.6-3.6z" fill="#bd6e66"/>
+  </g>
+  <g id="side-blue" stroke-linejoin="round">
+    <path d="M1 91h25l8 5v53H1zm30-90h96l-18 15H95L75 42H31zM37 110h27l23-23 17 18-39 44H37z"
+          fill="#161e24" stroke="#17222a" stroke-width="2"/>
+    <path d="M1 91h25l8 5v53H1zm30-90h96l-18 15H95L75 42H31zM37 110h27l23-23 17 18-39 44H37z"
+          fill="url(#terrain)" stroke="#73a4d3" stroke-width=".7"/>
+    <path d="M2 92h24l7 5v52H2zm30-90h92l-15 14H95L75 41H32zM38 111h27l22-22 16 16-38 43H38z"
+          fill="#73a4d3" fill-opacity=".12"/>
+    <path d="M34 4h85M35 38h38l16-21M40 145h24l23-27M5 95h18l7 4v46"
+          fill="none" stroke="#c0c8c5" stroke-opacity=".36" stroke-width=".55"/>
+    <path d="M2 13h27v31H2z" fill="#344049" stroke="#73a4d3" stroke-width=".6"/>
+    <path d="M9 16h13l4 4v17l-4 4H9l-4-4V20z" fill="#73a4d3" fill-opacity=".24" stroke="#73a4d3" stroke-width=".68"/>
+    <path d="M10 22h11m-11 6h11m-11 6h11" stroke="#73a4d3" stroke-width=".42" opacity=".64"/>
+    <path d="M0 65h42v20H0z" fill="#73a4d3" fill-opacity=".16"/>
+    <path d="M7 62l14-8 16 9v23l-15 10-15-10z" fill="#2b353b" stroke="#73a4d3" stroke-width=".86"/>
+    <path d="M16 69l6-3 6 3v12l-6 3-6-3z" fill="#73a4d3" stroke="#20292e" stroke-width="1"/>
+    <circle cx="24.11" cy="75" r="2.4" fill="#eef1e7" opacity=".76"/>
+    <path d="M50 75l5-10h13l6 10-6 10H55z" fill="#46545b" stroke="#73a4d3" stroke-width=".7"/>
+    <path d="M54 75l3-6h9l4 6-4 6h-9z" fill="#2f3c44" stroke="#9daeb0" stroke-width=".52"/>
+    <rect x="5" y="131" width="11" height="12" rx="1" fill="#73a4d3" fill-opacity=".42" stroke="#73a4d3" stroke-width=".65"/>
+    <path d="M7 137h7m-3.5-3.5v7" stroke="#e0e9e7" stroke-width=".7"/>
+    <circle cx="109" cy="113" r="5.6" fill="#29353d" stroke="#73a4d3" stroke-width=".75"/>
+    <path d="M109 109.4l3.6 3.6-3.6 3.6-3.6-3.6z" fill="#73a4d3"/>
+  </g>
+
+  <linearGradient id="ramp" x1="0" x2="0" y1="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#819293"/><stop offset="1" stop-color="#344753"/>
+  </linearGradient>
+  <g id="tunnel">
+    <path d="M-10-4.2h20v8.4h-20z" fill="#142027" stroke="#142027" stroke-width="1.2"/>
+    <path d="M-10-4.2h20v2.3h-20zM-10 1.9h20v2.3h-20z" fill="#617378"/>
+    <path d="M-10-4.2h20m-20 8.4h20M-10-4.2v8.4M10-4.2v8.4" fill="none" stroke="#99aeb1" stroke-width=".55"/>
+    <path d="M-9 0h18" stroke="#a8bfbd" stroke-width=".53" stroke-dasharray="2 1.3"/>
+    <path d="M-11-4.5v9m22-9v9" stroke="#d3bb86" stroke-width="1"/>
+  </g>
+  <g id="lowerRoad">
+    <path d="M36 114h31l13 10h18l8-8 4 4-10 15h76v12H36z"
+          fill="#303e47" stroke="#64737a" stroke-width=".65"/>
+    <path d="M37 146h133M38 115h26l13 10" fill="none" stroke="#aeb2a2" stroke-width=".38"/>
+    <path d="M57 125h23v21H57z" fill="#394953" stroke="#566c74" stroke-width=".52"/>
+    <path d="M59 125v20m2-20v20m2-20v20m2-20v20m2-20v20m2-20v20m2-20v20m2-20v20m2-20v20m2-20v20"
+          stroke="#829297" stroke-width=".6" opacity=".63"/>
+    <path d="M40 137h13m41 1h22m45 2h15" stroke="#abb8b5" stroke-width=".45" stroke-dasharray="2 1.8"/>
+    <use xlink:href="#tunnel" transform="translate(91 131) rotate(90)"/>
+    <use xlink:href="#tunnel" transform="translate(143 145)"/>
+    <use xlink:href="#tunnel" transform="translate(154 135)"/>
+  </g>
+  <g id="highlandAccess">
+    <path d="M98 96l9 18-10 12h-9l10-14-5-10z" fill="url(#ramp)" stroke="#a6b4ae" stroke-width=".58"/>
+    <path d="M95 112h5m-7 3h5m-7 3h5m-7 3h5" stroke="#aebfb9" stroke-width=".5"/>
+    <path d="M107 112l-3-13V60l20-31v8l-14 24v37l5 13-2 6z"
+          fill="#587868" fill-opacity=".55" stroke="#9ab59c" stroke-width=".60" stroke-dasharray="2 1.2"/>
+    <path d="M84 61h7v28h-7l-2-2V63z" fill="#436759" fill-opacity=".75"
+          stroke="#9ab59c" stroke-width=".58" stroke-dasharray="1.4 .85"/>
+  </g>
+</defs>
+<rect width="280" height="150" fill="url(#floor)"/>
+<path d="M20 0v150 M40 0v150 M60 0v150 M80 0v150 M100 0v150 M120 0v150 M140 0v150 M160 0v150 M180 0v150 M200 0v150 M220 0v150 M240 0v150 M260 0v150 M0 20h280 M0 40h280 M0 60h280 M0 80h280 M0 100h280 M0 120h280 M0 140h280" fill="none" stroke="#8398a4" stroke-width="0.525" opacity=".19"/>
+<!-- Opposing halves share the same survey geometry. -->
+<use xlink:href="#side-red"/>
+<use xlink:href="#side-blue" transform="translate(280 150) rotate(180)"/>
+
+<!-- The road decks and underpasses remain readable as separate layers. -->
+<use xlink:href="#lowerRoad"/>
+<use xlink:href="#lowerRoad" transform="translate(280 150) rotate(180)"/>
+
+<!-- Central high ground and its two approaches. -->
+<path d="M131 20h41l16 33v35l-42 46h-44L92 101V61z"
+      fill="#151f25" stroke="#141e24" stroke-width="1.6"/>
+<path d="M131 18h41l16 33v35l-42 46h-44L92 99V59z"
+      fill="url(#terrain)" stroke="#889aa2" stroke-width=".88"/>
+<path d="M132.5 22h36.8L184 52.5v32L144 128h-39l-9-30V61z"
+      fill="#4a5961" stroke="#bec8c9" stroke-opacity=".30" stroke-width=".5"/>
+<path d="M94 66h13v28H94m92-38h-13v28h13" fill="#26333b" stroke="#8397a0" stroke-width=".7"/>
+<path d="M96 70h8m-8 4h8m-8 4h8m-8 4h8m-8 4h8m-8 4h8m72-30h8m-8 4h8m-8 4h8m-8 4h8m-8 4h8m-8 4h8"
+      fill="none" stroke="#a0afb4" stroke-width=".52" opacity=".62"/>
+<path d="M132 60l15-5 15 15-13 20-16 3-14-14z"
+      fill="#34454b" stroke="#bcc0a9" stroke-width=".9"/>
+<path d="M138 65l8-3 9 9-9 13-11 2-9-8z"
+      fill="#556563" stroke="#cdcdb0" stroke-width=".55"/>
+<path d="M140 69v12m-6-6h12" stroke="#d1c9a7" opacity=".72" stroke-width=".55"/>
+<!-- Lower checkpoint, raised approach and continuous-buff strips (Rule Fig. 5-23). -->
+<use xlink:href="#highlandAccess"/>
+<use xlink:href="#highlandAccess" transform="translate(280 150) rotate(180)"/>
+<path d="M124 74l7-9 10 3-6 9-6 5z" fill="#a37564" stroke="#cea396" stroke-width=".47"/>
+<path d="M156 76l-7 9-10-3 6-9 6-5z" fill="#668a9e" stroke="#acc4d4" stroke-width=".47"/>
+<path d="M130 85l-3-3 23-23 3 3z" fill="#243036" stroke="#99a9a7" stroke-width=".38"/>
+<path d="M135 79l11-11m-9 13l11-11" fill="none" stroke="#92a8ad" stroke-width=".55"/>
+<circle cx="109.76" cy="113.4" r="4.1" fill="#2c3940" stroke="#bd6e66" stroke-width=".70"/>
+<circle cx="170.24" cy="36.6" r="4.1" fill="#2c3940" stroke="#73a4d3" stroke-width=".70"/>
+<!-- Field bounds and survey ticks. The frame follows the playable rectangle. -->
+<rect x="1.05" y="1.05" width="277.9" height="147.9"
+      fill="none" stroke="#0e181e" stroke-width="2.1"/>
+<rect x="2.1" y="2.1" width="275.8" height="145.8"
+      fill="none" stroke="#81929a" stroke-opacity=".58" stroke-width="0.42"/>
+<path d="M20 0v1 M20 150v-1 M40 0v1 M40 150v-1 M60 0v1 M60 150v-1 M80 0v1 M80 150v-1 M100 0v1 M100 150v-1 M120 0v1 M120 150v-1 M140 0v1 M140 150v-1 M160 0v1 M160 150v-1 M180 0v1 M180 150v-1 M200 0v1 M200 150v-1 M220 0v1 M220 150v-1 M240 0v1 M240 150v-1 M260 0v1 M260 150v-1 M0 20h1 M280 20h-1 M0 40h1 M280 40h-1 M0 60h1 M280 60h-1 M0 80h1 M280 80h-1 M0 100h1 M280 100h-1 M0 120h1 M280 120h-1 M0 140h1 M280 140h-1" fill="none" stroke="#a9b9c0" stroke-width="0.546" opacity=".70"/>
+</svg>

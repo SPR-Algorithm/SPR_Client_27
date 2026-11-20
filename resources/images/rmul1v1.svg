@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000" viewBox="0 0 50 50">
+<defs>
+  <linearGradient id="floor" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#29363f"/><stop offset=".52" stop-color="#232f37"/><stop offset="1" stop-color="#29363f"/>
+  </linearGradient>
+  <linearGradient id="terrain" x1="0" x2="0" y1="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#5e7078"/><stop offset="1" stop-color="#405059"/>
+  </linearGradient>
+
+    <g id="spawn-red">
+      <path d="M.5.5H10V10H.5z" fill="#bd6e66" fill-opacity=".24" stroke="#bd6e66" stroke-width=".32"/>
+      <path d="M1.25 9.15h7.9v-7.9" fill="none" stroke="#bd6e66" stroke-width=".26" stroke-dasharray=".56 .48"/>
+      <path d="M4.8 5.9l1-1-1-1m.9 2.8L7.4 4.9 5.7 3.2" fill="none" stroke="#bd6e66" stroke-width=".38"/>
+    </g>
+  <g id="spawn-blue">
+      <path d="M.5.5H10V10H.5z" fill="#73a4d3" fill-opacity=".24" stroke="#73a4d3" stroke-width=".32"/>
+      <path d="M1.25 9.15h7.9v-7.9" fill="none" stroke="#73a4d3" stroke-width=".26" stroke-dasharray=".56 .48"/>
+      <path d="M4.8 5.9l1-1-1-1m.9 2.8L7.4 4.9 5.7 3.2" fill="none" stroke="#73a4d3" stroke-width=".38"/>
+    </g>
+
+</defs>
+<rect width="50" height="50" fill="url(#floor)"/>
+<path d="M5 0v50 M10 0v50 M15 0v50 M20 0v50 M25 0v50 M30 0v50 M35 0v50 M40 0v50 M45 0v50 M0 5h50 M0 10h50 M0 15h50 M0 20h50 M0 25h50 M0 30h50 M0 35h50 M0 40h50 M0 45h50" fill="none" stroke="#8398a4" stroke-width="0.2" opacity=".19"/>
+<use xlink:href="#spawn-red"/>
+<use xlink:href="#spawn-blue" transform="translate(50 50) rotate(180)"/>
+<!-- Two cover footprints retain the published top-view orientation. -->
+<path d="M13 22.6h1.8l5.1-5.1h1.8v1.8h-1.1l-5.1 5.1H13zM28.3 30.7h1.8l5.1-5.1H37v1.8h-1.1l-5.1 5.1h-2.5z"
+      fill="#162127" transform="translate(.25 .43)"/>
+<path d="M13 22.6h1.8l5.1-5.1h1.8v1.8h-1.1l-5.1 5.1H13zM28.3 30.7h1.8l5.1-5.1H37v1.8h-1.1l-5.1 5.1h-2.5z"
+      fill="url(#terrain)" stroke="#a1afb0" stroke-width=".29" stroke-linejoin="round"/>
+<path d="M13.4 23.1H15l5.1-5.1h1.1M28.7 31.2h1.6l5.1-5.1h1.2"
+      fill="none" stroke="#c0c8c3" stroke-opacity=".61" stroke-width=".22"/>
+<!-- Field bounds and survey ticks. The frame follows the playable rectangle. -->
+<rect x="0.4" y="0.4" width="49.2" height="49.2"
+      fill="none" stroke="#0e181e" stroke-width="0.8"/>
+<rect x="0.8" y="0.8" width="48.4" height="48.4"
+      fill="none" stroke="#81929a" stroke-opacity=".58" stroke-width="0.16"/>
+<path d="M5 0v1 M5 50v-1 M10 0v1 M10 50v-1 M15 0v1 M15 50v-1 M20 0v1 M20 50v-1 M25 0v1 M25 50v-1 M30 0v1 M30 50v-1 M35 0v1 M35 50v-1 M40 0v1 M40 50v-1 M45 0v1 M45 50v-1 M0 5h1 M50 5h-1 M0 10h1 M50 10h-1 M0 15h1 M50 15h-1 M0 20h1 M50 20h-1 M0 25h1 M50 25h-1 M0 30h1 M50 30h-1 M0 35h1 M50 35h-1 M0 40h1 M50 40h-1 M0 45h1 M50 45h-1" fill="none" stroke="#a9b9c0" stroke-width="0.208" opacity=".70"/>
+</svg>

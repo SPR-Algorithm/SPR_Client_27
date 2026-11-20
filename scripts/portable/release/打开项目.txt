@@ -1,0 +1,21 @@
+SPR RoboMaster 项目
+
+只看自定义客户端
+Windows 主机：双击 02-运行脚本/Windows/8-启动Windows自定义客户端.bat。
+也可双击 04-自定义客户端/Windows/RoboMasterClient2025.exe。
+Linux NUC 或虚拟机：打开 02-运行脚本/Linux，在终端运行
+    bash ./6-启动Linux自定义客户端.sh --foreground
+没有路由器也可以看界面。
+
+按 P 打开设置，先选赛项，再选红方或蓝方的机器人。
+Windows 版进入 2027 赛项默认显示战术指挥屏。按住 Tab 看全屏战况，按 M 切换大地图。
+Ctrl+Y 切换地图优先与图传优先，Ctrl+T 在指挥屏与操作界面之间切换。
+联调前按现场拓扑填写本地 MQTT 地址。源码示例默认为回环地址。
+
+Windows 手动打开
+03-官方程序/01-引擎/RoboMasterEngine.exe 是官方服务器与裁判端。
+03-官方程序/02-选手端/start.bat 打开官方选手端及辅助进程。
+也可以在 02-运行脚本/Windows 双击 2-启动Windows官方端.bat，一次打开两者。
+
+完整说明见 01-文档/打开项目与每天开机.md。
+运行入口都在 02-运行脚本，改自定义客户端源码请打开 04-自定义客户端/源码。

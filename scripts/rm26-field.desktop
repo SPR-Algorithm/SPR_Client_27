@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=RM26 客户端
+Name[zh_CN]=RM26 自定义客户端
+Comment=SPR RoboMaster 2027 Custom Terminal
+Comment[zh_CN]=SPR RoboMaster 2027 自定义终端
+Exec=sh -c 'cd "$(dirname "$1")/.." && scripts/rm26-field-launch.sh' _ %k
+Icon=resources/images/app_icon.png
+Path=
+Type=Application
+Terminal=false
+Categories=Game;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

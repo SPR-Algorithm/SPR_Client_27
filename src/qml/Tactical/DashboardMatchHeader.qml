@@ -1,0 +1,186 @@
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import QtQuick.Layouts
+
+Rectangle {
+    id: root
+
+    required property var game
+    required property var dashboard
+    required property string redTeamName
+    required property string blueTeamName
+    property bool compact: false
+    readonly property bool bases: Boolean(game?.hasBases)
+    readonly property color redAccent: "#fa9083"
+    readonly property color blueAccent: "#85c6f2"
+    readonly property int side: Number(dashboard.leadingSide || 0)
+    readonly property int margin: Math.max(12, Math.min(26, Math.round(width * 0.0115)))
+    readonly property int clockHeight: compact ? 51 : 66
+    readonly property int clockWidth: Math.max(220, Math.round((width - 2 * margin - 28) * 0.45 / 2.45))
+    implicitHeight: bases ? (compact ? 84 : 106) : (compact ? 71 : 90)
+
+    readonly property string clock: {
+        const t = Math.max(0, Number(game?.remainingTime || 0))
+        return Math.floor(t / 60).toString().padStart(2, "0") + ":" + (t % 60).toString().padStart(2, "0")
+    }
+
+    function structureStats(isBlue) {
+        const key = isBlue ? "blue" : "red"
+        return {
+            baseHp: root.dashboard[key + "BaseHp"],
+            baseStatus: root.dashboard[key + "BaseStatus"],
+            outpostHp: root.dashboard[key + "OutpostHp"],
+            outpostOwnerRed: root.game?.territoryStatus?.[key + "OutpostOwnerRed"],
+            outpostControl: root.game?.territoryStatus?.[key + "OutpostControl"]
+        }
+    }
+
+    color: "#47101820"
+    Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: "#596774" }
+
+    RowLayout {
+        anchors.fill: parent
+        anchors.leftMargin: root.margin
+        anchors.rightMargin: root.margin
+        anchors.topMargin: root.compact ? 3 : 6
+        anchors.bottomMargin: 4
+        spacing: root.compact ? 10 : 14
+        DashboardHealthWing {
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+            Layout.fillHeight: true
+            blue: false
+            objectName: "redDashboardHealth"
+            compact: root.compact
+            teamName: root.redTeamName
+            structures: root.bases
+            stats: root.structureStats(false)
+        }
+        ColumnLayout {
+            Layout.minimumWidth: root.clockWidth
+            Layout.preferredWidth: root.clockWidth
+            Layout.maximumWidth: root.clockWidth
+            Layout.alignment: Qt.AlignVCenter
+            spacing: 3
+            Item {
+                Layout.fillWidth: true
+                Layout.preferredHeight: root.clockHeight
+                Canvas {
+                    anchors.fill: parent
+                    onWidthChanged: requestPaint()
+                    onHeightChanged: requestPaint()
+                    onPaint: {
+                        const ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+                        ctx.beginPath()
+                        ctx.moveTo(width * .05, .5)
+                        ctx.lineTo(width * .95, .5)
+                        ctx.lineTo(width - .5, height * .18)
+                        ctx.lineTo(width * .95, height * .78)
+                        ctx.lineTo(width * .90, height - .5)
+                        ctx.lineTo(width * .10, height - .5)
+                        ctx.lineTo(width * .05, height * .78)
+                        ctx.lineTo(.5, height * .18)
+                        ctx.closePath()
+                        const edge = ctx.createLinearGradient(0, 0, 0, height)
+                        edge.addColorStop(0, "#30383c")
+                        edge.addColorStop(1, "#20272a")
+                        ctx.fillStyle = edge
+                        ctx.fill()
+                        ctx.strokeStyle = "#526263"
+                        ctx.stroke()
+                        const face = ctx.createLinearGradient(0, 0, 0, height)
+                        face.addColorStop(0, "#303b3f")
+                        face.addColorStop(.48, "#192124")
+                        face.addColorStop(1, "#243033")
+                        ctx.fillStyle = face
+                        ctx.fillRect(width * .25, 1, width * .50, height - 2)
+                    }
+                }
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.margins: 4
+                    Text {
+                        objectName: "dashboardRedScore"
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                        text: root.game?.redScore ?? "—"
+                        color: root.redAccent
+                        font.family: "Bahnschrift"
+                        font.pixelSize: root.compact ? 33 : 42
+                        font.bold: true
+                    }
+                    Column {
+                        Layout.preferredWidth: root.clockWidth * 0.50
+                        Layout.alignment: Qt.AlignCenter
+                        Text {
+                            width: parent.width
+                            horizontalAlignment: Text.AlignHCenter
+                            text: (root.game?.currentRound > 0 ? "第 " + root.game.currentRound + " 局 · " : "")
+                                  + (root.game?.gamePhase === "战斗阶段" ? "比赛中" : root.game?.gamePhase || "等待开赛")
+                            color: "#bce1d3"
+                            font.pixelSize: 10
+                        }
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            objectName: "dashboardMatchClock"
+                            text: root.clock
+                            color: "#fbfcff"
+                            font.family: "Bahnschrift"
+                            font.pixelSize: root.compact ? 35 : Math.min(59, Math.round(root.width * 0.0305))
+                            font.weight: Font.ExtraBold
+                        }
+                    }
+                    Text {
+                        objectName: "dashboardBlueScore"
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                        text: root.game?.blueScore ?? "—"
+                        color: root.blueAccent
+                        font.family: "Bahnschrift"
+                        font.pixelSize: root.compact ? 33 : 42
+                        font.bold: true
+                    }
+                }
+            }
+            Rectangle {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: Math.min(root.clockWidth, advantage.implicitWidth + 24)
+                Layout.preferredHeight: 16
+                color: "#6611202c"
+                Rectangle { width: 1; height: parent.height; color: "#70657786" }
+                Rectangle { anchors.right: parent.right; width: 1; height: parent.height; color: "#70657786" }
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.leftMargin: 7
+                    anchors.rightMargin: 6
+                    spacing: 5
+                    Rectangle { Layout.preferredWidth: 5; Layout.preferredHeight: 5; radius: 3; color: advantage.color }
+                    Text {
+                        id: advantage
+                        objectName: "commandAdvantageLabel"
+                        Layout.fillWidth: true
+                        text: (root.dashboard.leadText || "等待裁判数据")
+                              + (root.dashboard.leadReason ? "  " + root.dashboard.leadReason : "")
+                        font.pixelSize: 11
+                        font.weight: Font.DemiBold
+                        color: root.side === 1 ? root.redAccent : root.side === 2 ? root.blueAccent : "#e2e9ec"
+                        elide: Text.ElideRight
+                    }
+                }
+            }
+        }
+        DashboardHealthWing {
+            Layout.fillWidth: true
+            Layout.preferredWidth: 1
+            Layout.fillHeight: true
+            blue: true
+            objectName: "blueDashboardHealth"
+            compact: root.compact
+            teamName: root.blueTeamName
+            structures: root.bases
+            stats: root.structureStats(true)
+        }
+    }
+}

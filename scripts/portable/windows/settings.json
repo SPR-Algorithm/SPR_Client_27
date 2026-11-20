@@ -1,0 +1,8 @@
+{
+  "EngineAddress": "192.0.2.2",
+  "AdapterName": "",
+  "ExpectedSsid": "robomaster-spr",
+  "ClientAdapterName": "",
+  "ClientHostAddress": "198.51.100.1",
+  "ClientSubnet": "192.0.2.0/24"
+}
